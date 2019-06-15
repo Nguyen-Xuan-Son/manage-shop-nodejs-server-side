@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    style
+      include register.css
+  body
+    .container
+      div
+        h1 Register
+        form(action="/register", method="POST")
+            div
+                label(for="username") Username:
+                input(
+                  type="text",
+                  id="username",
+                  name="username",
+                  value="",
+                  placeholder="Enter username")
+            div
+                label(for="password") Password:
+                input(
+                  type="password",
+                  id="password",
+                  name="password",
+                  value="",
+                  placeholder="Enter password")
+            div
+                label(for="confirm-password") Confirm password:
+                input(
+                  type="password",
+                  id="confirm-password",
+                  name="confirmPassword",
+                  value="",
+                  placeholder="Enter confirm password")
+            .item-button
+                button(type="submit") Register
+            div
+              a(href="/login") Back to login
+    script
+      include register.js
