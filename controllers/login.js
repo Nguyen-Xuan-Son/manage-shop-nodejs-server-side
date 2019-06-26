@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const Schema = require('./../schema-db/account');
 
 module.exports.login = (req, res) => { 
-    res.render('./components/login/login'); 
+    res.json({res: 'Login'}); 
 };
 
 module.exports.loginPOST = (req, res) => {
@@ -11,9 +11,9 @@ module.exports.loginPOST = (req, res) => {
     const checkPassword = (passwordHash) => {
         bcrypt.compare(password, passwordHash, function(err, resCompare) {
             if(resCompare) {
-                res.send({mes: 'Login success!'});
+                res.json({mes: 'Login success!'});
             } else {
-                res.send({mes: 'Login error!'});
+                res.json({mes: 'Login error!'});
             }
         });
     };
@@ -22,7 +22,7 @@ module.exports.loginPOST = (req, res) => {
         if (response) {
             checkPassword(response.password);
         } else {
-            res.send({mes: 'Login error!'});
+            res.json({mes: 'Login error!'});
         }
     }).catch((err) => {
         res.status(500).json(err);

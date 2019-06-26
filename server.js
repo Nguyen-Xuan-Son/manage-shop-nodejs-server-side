@@ -4,39 +4,32 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-// Constant config
-const constant = require('./constant');
+// Constant config.
+const CONSTANTS = require('./constant');
 
-// Import router file
+// Import router file.
 const login = require('./router/login');
 const register = require('./router/register');
 
-// Rad json
+// Rad json.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Static file
-app.use(express.static('public'));
-
-// Config view engine
-app.set('view engine', 'pug');
-app.set('views', './views');
-
-// Config router
+// Config router.
 app.use('/login', login);
 app.use('/register', register);
 
-// Connect DB
-mongoose.connect(constant.mongoURL, {
+// Connect DB.
+mongoose.connect(CONSTANTS.mongoURL, {
     useNewUrlParser: true
 }).then(() => {
-    console.log('Connect mongodb success!')
-}).catch(() => {
-    console.error('Error connect!')
+    console.log('Connect mongodb success!');
+}).catch((err) => {
+    console.error('Error connect: ' + err);
 });
 
-// Open port
-const port = process.env.port || constant.PORT;
+// Open port.
+const port = process.env.port || CONSTANTS.PORT;
 app.listen(port, () => {
     console.log(`Server run on port: ${port}`)
 });

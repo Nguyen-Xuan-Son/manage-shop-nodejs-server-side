@@ -2,7 +2,7 @@ const Schema = require('./../schema-db/account');
 const hashBcrypt = require('bcrypt');
 
 module.exports.register = (req, res) => { 
-    res.render('./components/register/register'); 
+    res.json({res: './components/register/register'});
 };
 
 module.exports.registerPOST = (req, res) => {
@@ -18,7 +18,7 @@ module.exports.registerPOST = (req, res) => {
     const saveAccount = (password) => {
         const account = new Schema.accountSchema({username, password});
         account.save().then(() => {
-            res.redirect('/login');
+            res.json({res: 'Registered account.'});
         }).catch(onrejected => {
             res.status(500).json(onrejected);
         });
