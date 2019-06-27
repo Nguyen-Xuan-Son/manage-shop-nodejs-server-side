@@ -1,8 +1,144 @@
 .bg-login {
-    background: url('https://www.deutschland.de/sites/default/files/styles/crop_page/public/media/image/work-and-travel-germany-jobs.jpg?h=55f18e7c&itok=i5d7MByo') no-repeat center center fixed;
+    background: url('./images/bg-screen-login.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: -webkit-fill-available;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
+
+.container {
+    margin: auto;
+    height: 800px;
+    width: 75%;
+    background: rgba(43, 136, 124, 0.56);
+    border-radius: 10px;
+    display: flex;
+}
+
+.panel-right {
+    height: 100%;
+    opacity: 0.8;
+    width: 50%;
+}
+
+.panel-left {
+    width: 50%;
+    background: url('./images/bg-pannel-screen-login.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    align-items: center;
+    opacity: 0.85;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.icons div {
+    font-size: 40px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.text-signup {
+    color: #fff;
+    padding-bottom: 30px;
+    font-style: italic;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.text-qt {
+    padding: 5px;
+    color: #fff;
+}
+
+.icon-facebook {
+    color: rgb(42, 112, 190);
+}
+
+.icon-google {
+    color: rgb(185, 45, 26);
+}
+
+.icon-twitter {
+    color: rgb(255, 255, 255);
+}
+
+.control-input {
+    position: relative;
+}
+
+.effects-input {
+    border: 1px solid #ccc;
+    padding: 7px 14px 9px;
+    transition: 0.4s;
+}
+
+.effects-input ~ .focus-border:before,
+.effects-input ~ .focus-border:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3399FF;
+    transition: 0.3s;
+}
+
+.effects-input ~ .focus-border:after {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+}
+
+.effects-input ~ .focus-border i:before,
+.effects-input ~ .focus-border i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background-color: #3399FF;
+    transition: 0.4s;
+}
+
+.effects-input ~ .focus-border i:after {
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 0;
+}
+
+.effects-input:focus ~ .focus-border:before,
+.effects-input:focus ~ .focus-border:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.effects-input:focus ~ .focus-border i:before,
+.effects-input:focus ~ .focus-border i:after {
+    height: 100%;
+    transition: 0.4s;
+}
+
+
+
+
+
+
