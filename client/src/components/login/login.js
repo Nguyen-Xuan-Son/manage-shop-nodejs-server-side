@@ -16,31 +16,34 @@ class Login extends React.Component {
                         <div className="text-signup">Signup</div>
                     </div>
                     <div className="panel-right">
-                        <div className="logo">Image logo</div>
+                        <div className="logo">
+                            <img src="https://profile.freepik.com/accounts/avatar/default_07.png" alt="Image logo" />
+                        </div>
                         <div className="name-system">Manager Shop</div>
                         <div>
                             <form>
                                 <div className="control-input">
-                                    <input  className="effects-input"
-                                            placeholder="Username"
+                                    <input  placeholder="Username"
+                                            className="input-style"
                                             type="text" />
-                                    <span class="focus-border"><i></i></span>
                                 </div>
                                 <div className="control-input">
-                                    <input  className="effects-input"
-                                            placeholder="Password"
+                                    <input  placeholder="Password"
+                                            className="input-style"
                                             type="text" />
-                                    <span class="focus-border"><i></i></span>
                                 </div>
                                 <div>
-                                    <input type="checkbox" />
+                                    <input  id="remember-me"
+                                            name="remember-me"
+                                            type="checkbox" />
+                                    <label forhtml="remember-me">Remember me</label>
                                 </div>
-                                <div>
-                                    <button type="button">Login</button>
+                                <div className="container-btn-login">
+                                    <button className="btn-login" type="button">Login</button>
                                 </div>
                             </form>
                         </div>
-                        <div>Forgot Password?</div>
+                        <div className="forgot-pass-style">Forgot Password?</div>
                     </div>
                 </div>
             </div>
