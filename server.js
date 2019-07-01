@@ -11,7 +11,7 @@ const CONSTANTS = require('./constant');
 const login = require('./router/login');
 const register = require('./router/register');
 
-// Rad json.
+// Read json.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -20,10 +20,9 @@ app.use('/login', login);
 app.use('/register', register);
 
 // Connect DB.
-process.env.MONGODB = "mongodb://manage-shop:son123456789@ds345587.mlab.com:45587/manage-shop";
-mongoose.connect(process.env.MONGODB, {
+mongoose.connect(CONSTANTS.mongoURL, {
     useNewUrlParser: true
-}).then((res) => {
+}).then(() => {
     console.log('Connect mongodb success!');
 }).catch((err) => {
     console.error('Error connect: ' + err);
