@@ -29,7 +29,7 @@ mongoose.connect(CONSTANTS.mongoURL, {
 });
 
 // Open port.
-const port = process.env.port || CONSTANTS.PORT;
+const port = process.env.PORT || CONSTANTS.PORT;
 app.listen(port, () => {
     console.log(`Server run on port: ${port}`)
 });
