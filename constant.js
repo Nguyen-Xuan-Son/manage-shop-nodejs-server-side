@@ -3,5 +3,5 @@ const hat = require("hat");
 module.exports = {
     PORT: 4000,
     keyCookies: hat(),
-    mongoURL: "mongodb://127.0.0.1:27017/manage-shop"
+    mongoURL: "mongodb://Son:son16011998@ds345587.mlab.com:45587/manage-shop"
 }
