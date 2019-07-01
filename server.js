@@ -33,3 +33,5 @@ const port = process.env.PORT || CONSTANTS.PORT;
 app.listen(port, () => {
     console.log(`Server run on port: ${port}`)
 });
+console.log('process.env.port', process.env.port);
+console.log('process.env.PORT', process.env.PORT);
