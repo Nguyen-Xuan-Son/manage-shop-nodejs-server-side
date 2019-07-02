@@ -7,6 +7,9 @@ const app = express();
 // Constant config.
 const CONSTANTS = require('./constant');
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 // Import router file.
 const login = require('./router/login');
 const register = require('./router/register');
