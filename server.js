@@ -10,6 +10,12 @@ const CONSTANTS = require('./constant');
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
+
 // Import router file.
 const login = require('./router/login');
 const register = require('./router/register');
@@ -29,12 +35,6 @@ mongoose.connect(CONSTANTS.mongoURL, {
     console.log('Connect mongodb success!');
 }).catch((err) => {
     console.error('Error connect: ' + err);
-});
-
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 // Open port.
