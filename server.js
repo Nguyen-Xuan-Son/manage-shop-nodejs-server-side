@@ -31,6 +31,12 @@ mongoose.connect(CONSTANTS.mongoURL, {
     console.error('Error connect: ' + err);
 });
 
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
 // Open port.
 const port = process.env.PORT || CONSTANTS.PORT;
 app.listen(port, () => {
